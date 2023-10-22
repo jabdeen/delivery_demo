@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-11 21:08:03.134545",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xmjl",
+  "mobile_number",
+  "column_break_awgc",
+  "customer_name",
+  "destination_location_section",
+  "pickup_map",
+  "pickup_lon",
+  "pickup_lat",
+  "column_break_mxkh",
+  "destination_map",
+  "destination_lon",
+  "destination_lat",
+  "section_break_ppux",
+  "amended_from",
+  "column_break_sxjg"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_xmjl",
+   "fieldtype": "Section Break",
+   "label": "Customer Info"
+  },
+  {
+   "fetch_from": "null.",
+   "fieldname": "mobile_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Mobile Number",
+   "options": "customer_demo"
+  },
+  {
+   "fieldname": "column_break_awgc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "mobile_number.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "destination_location_section",
+   "fieldtype": "Section Break",
+   "label": "Locations"
+  },
+  {
+   "fieldname": "pickup_map",
+   "fieldtype": "Geolocation",
+   "label": "Pickup MAP"
+  },
+  {
+   "fieldname": "pickup_lon",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Pickup Lon",
+   "precision": "6",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pickup_lat",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Pickup Lat",
+   "precision": "6",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_mxkh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "destination_map",
+   "fieldtype": "Geolocation",
+   "label": "Destination MAP"
+  },
+  {
+   "fieldname": "destination_lon",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Destination Lon",
+   "read_only": 1
+  },
+  {
+   "fieldname": "destination_lat",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Destination Lat",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ppux",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "package_state_demo",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sxjg",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-10-15 19:11:39.589946",
+ "modified_by": "Administrator",
+ "module": "Delivery Demo",
+ "name": "package_state_demo",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

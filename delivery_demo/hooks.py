@@ -133,23 +133,28 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"delivery_demo.tasks.all"
-#	],
-#	"daily": [
-#		"delivery_demo.tasks.daily"
-#	],
-#	"hourly": [
-#		"delivery_demo.tasks.hourly"
-#	],
-#	"weekly": [
-#		"delivery_demo.tasks.weekly"
-#	],
-#	"monthly": [
-#		"delivery_demo.tasks.monthly"
-#	],
-# }
+scheduler_events = {
+    "cron":{
+        "*/2 * * * *":[
+            "delivery_demo.tasks.cron"
+        ]
+    },
+	"all": [
+		"delivery_demo.tasks.all"
+	],
+	"daily": [
+		"delivery_demo.tasks.daily"
+	],
+	"hourly": [
+		"delivery_demo.tasks.hourly"
+	],
+	"weekly": [
+		"delivery_demo.tasks.weekly"
+	],
+	"monthly": [
+		"delivery_demo.tasks.monthly"
+	],
+}
 
 # Testing
 # -------
@@ -219,3 +224,6 @@ app_license = "mit"
 # auth_hooks = [
 #	"delivery_demo.auth.validate"
 # ]
+
+
+website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/dashboard/<path:app_path>', 'to_route': 'dashboard'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/dashboard/<path:app_path>', 'to_route': 'dashboard'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'},]
