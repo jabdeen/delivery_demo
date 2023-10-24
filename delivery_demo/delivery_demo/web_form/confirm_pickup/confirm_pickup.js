@@ -43,8 +43,7 @@ const d_number = urlParams.get('d_number');
 				"dist_lat",
 				"dist_lon",
 				"distance_to_pickup",
-				"contract_is_active",
-				"selecting_get_announced"
+
         ]
     },
     callback: (r)=> {

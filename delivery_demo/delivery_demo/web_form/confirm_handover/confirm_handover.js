@@ -37,8 +37,7 @@ const d_number = urlParams.get('d_number');
 				"dist_lat",
 				"dist_lon",
 				"distance_to_pickup",
-				"contract_is_active",
-				"selecting_get_announced"
+
         ]
     },
     callback: (r)=> {
@@ -53,7 +52,7 @@ const d_number = urlParams.get('d_number');
 			frappe.web_form.set_value("pickup_lon", r.message[0].pickup_lon);
 			frappe.web_form.set_value("mobile_number", r.message[0].mobile_number);
 			frappe.web_form.set_value("package_order_id", r.message[0].package_order_id);
-			frappe.web_form.set_value('title', rn);
+			// frappe.web_form.set_value('title', rn);
 			frappe.web_form.set_value('dist_lat', r.message[0].dist_lat);
 			frappe.web_form.set_value('dist_lon', r.message[0].dist_lon);
 			frappe.web_form.set_value('handedover', 1);
