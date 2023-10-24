@@ -1,0 +1,341 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-10-24 20:53:39.606029",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "column_break_dadv",
+  "section_break_eybw",
+  "published",
+  "column_break_dcpt",
+  "route",
+  "section_break_dkzw",
+  "selecting_get_announced",
+  "selected_get_announced",
+  "column_break_hhya",
+  "pickedup_get_announced",
+  "delivered_get_announced",
+  "section_break_bvyj",
+  "contract_is_active",
+  "column_break_gtnq",
+  "accepted_order",
+  "column_break_azss",
+  "hired",
+  "column_break_kh3t",
+  "pickedup",
+  "column_break_dcxj",
+  "handedover",
+  "section_break_wrsi",
+  "package_order_id",
+  "column_break_dtfm",
+  "customer_name",
+  "customer_number",
+  "section_break_mpin",
+  "driver_name",
+  "column_break_tqdl",
+  "mobile_number",
+  "section_break_chmx",
+  "lat",
+  "column_break_fnoj",
+  "lon",
+  "section_break_bvih",
+  "pickup_lon",
+  "column_break_srqg",
+  "pickup_lat",
+  "section_break_lqdt",
+  "dist_lat",
+  "column_break_f9fn",
+  "dist_lon",
+  "section_break_2cte",
+  "distance_to_pickup",
+  "column_break_eg8c",
+  "time_stamp"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "title"
+  },
+  {
+   "fieldname": "column_break_dadv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_eybw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "published"
+  },
+  {
+   "fieldname": "column_break_dcpt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "section_break_dkzw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "selecting_get_announced",
+   "fieldtype": "Check",
+   "label": "selecting_get_announced"
+  },
+  {
+   "default": "0",
+   "fieldname": "selected_get_announced",
+   "fieldtype": "Check",
+   "label": "selected_get_announced"
+  },
+  {
+   "fieldname": "column_break_hhya",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "pickedup_get_announced",
+   "fieldtype": "Check",
+   "label": "pickedup_get_announced"
+  },
+  {
+   "default": "0",
+   "fieldname": "delivered_get_announced",
+   "fieldtype": "Check",
+   "label": "delivered_get_announced"
+  },
+  {
+   "fieldname": "section_break_bvyj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "mobile_number.contract_is_active",
+   "fieldname": "contract_is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Contract is Active"
+  },
+  {
+   "fieldname": "column_break_gtnq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": ".",
+   "fieldname": "accepted_order",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Driver Accepted Order"
+  },
+  {
+   "fieldname": "column_break_azss",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": ".",
+   "fieldname": "hired",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Driver is hired"
+  },
+  {
+   "fieldname": "column_break_kh3t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "pickedup",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Package Pickedup"
+  },
+  {
+   "fieldname": "column_break_dcxj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "handedover",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Package Handedover"
+  },
+  {
+   "fieldname": "section_break_wrsi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "package_order_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "package order id",
+   "options": "package_state_demo",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_dtfm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "package_order_id.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "package_order_id.mobile_number",
+   "fieldname": "customer_number",
+   "fieldtype": "Data",
+   "label": "Customer Number"
+  },
+  {
+   "fieldname": "section_break_mpin",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "mobile_number.name1",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "column_break_tqdl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Mobile Number",
+   "options": "driver_demo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_chmx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lat",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Lat",
+   "precision": "9"
+  },
+  {
+   "fieldname": "column_break_fnoj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lon",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Lon",
+   "precision": "9"
+  },
+  {
+   "fieldname": "section_break_bvih",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "package_order_id.pickup_lon",
+   "fieldname": "pickup_lon",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Pickup Lon",
+   "precision": "9"
+  },
+  {
+   "fieldname": "column_break_srqg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "package_order_id.pickup_lat",
+   "fieldname": "pickup_lat",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Pickup Lat",
+   "precision": "9"
+  },
+  {
+   "fieldname": "section_break_lqdt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "dist_lat",
+   "fieldtype": "Float",
+   "label": "Distination Lat"
+  },
+  {
+   "fieldname": "column_break_f9fn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dist_lon",
+   "fieldtype": "Float",
+   "label": "Distination Lon"
+  },
+  {
+   "fieldname": "section_break_2cte",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "distance_to_pickup",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Distance to Pickup"
+  },
+  {
+   "fieldname": "column_break_eg8c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time_stamp",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Time Stamp"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2023-10-24 20:53:39.606029",
+ "modified_by": "Administrator",
+ "module": "Delivery Demo",
+ "name": "driver_hired",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "Route",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "website_search_field": "title"
+}
