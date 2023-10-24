@@ -30,7 +30,7 @@ const d_number = urlParams.get("d_number");
  frappe.call({
     method: "delivery_demo.delivery_demo.web_form.accept_order.accept_order.get_all_order_fields",
     args: {
-        "doctype": "driver-location-demo",
+        "doctype": "driver_location",
         "filters": {"package_order_id":o_number,"accepted_order":1,"selecting_get_announced":0},
         "fieldname": [
 				"title",

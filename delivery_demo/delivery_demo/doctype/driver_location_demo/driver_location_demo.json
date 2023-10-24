@@ -306,10 +306,11 @@
    "fieldtype": "Section Break"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2023-10-22 11:22:37.324257",
+ "modified": "2023-10-24 19:15:45.678669",
  "modified_by": "Administrator",
  "module": "Delivery Demo",
  "name": "driver-location-demo",

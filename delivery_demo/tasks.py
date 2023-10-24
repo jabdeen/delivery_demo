@@ -62,7 +62,7 @@ def demostatemachine( package_state_demo ):
             searchparam3 ="&p_lon="
             searchparam4 ="&p_lat="
             # print("...order id is ..........." + name)
-            packagedrivers = frappe.get_all('driver-location-demo',['name','mobile_number','distance_to_pickup','contract_is_active','selecting_get_announced'],filters={'package_order_id':name,'accepted_order':1,'selecting_get_announced':0})
+            packagedrivers = frappe.get_all('driver_location',['name','mobile_number','distance_to_pickup','contract_is_active','selecting_get_announced'],filters={'package_order_id':name,'accepted_order':1,'selecting_get_announced':0})
             
             if not packagedrivers:
                 print ('no driver found')
@@ -78,7 +78,7 @@ def demostatemachine( package_state_demo ):
                             customurl = serverurl + pageroute +searchparam1 + drivernumber + searchparam2 + name + searchparam3 + pickup_lon + searchparam4 + pickup_lat+ searchparam5 + driver.name
                             print(customurl)
                             # send_whatsapp(customurl,drivernumber)
-                            frappe.db.set_value('driver-location-demo', driver.name, 'selecting_get_announced', 1)                               
+                            frappe.db.set_value('driver_location', driver.name, 'selecting_get_announced', 1)                               
                 frappe.db.set_value('package_state_demo', package_state_demo.name, 'workflow_state', "driver selected")                       
                 # print(' this driver selected')
                 # print(driver.mobile_number)
@@ -86,7 +86,7 @@ def demostatemachine( package_state_demo ):
         case "driver selected":
             print("..................driver selected....................................")
             packagedrivers=[]
-            packagedrivers = frappe.get_all('driver-location-demo',['name','mobile_number','contract_is_active','selected_get_announced'],filters={'package_order_id':package_state_demo.name,'accepted_order':1,'hired':1,'selecting_get_announced':1})
+            packagedrivers = frappe.get_all('driver_location',['name','mobile_number','contract_is_active','selected_get_announced'],filters={'package_order_id':package_state_demo.name,'accepted_order':1,'hired':1,'selecting_get_announced':1})
             
             if not packagedrivers:
                 return
@@ -97,7 +97,7 @@ def demostatemachine( package_state_demo ):
                         customurl = serverurl + pageroute +searchparam1 + driver.mobile_number + searchparam2 + package_state_demo.name + searchparam3 + str(package_state_demo.pickup_lon) + searchparam4 + str(package_state_demo.pickup_lat) + searchparam5 + driver.title
                         # send_whatsapp(customurl,driver.mobile_number)
                         print(' this driver is hired')
-                        frappe.db.set_value('driver-location-demo', driver.name, 'selected_get_announced', 1)                                                       
+                        frappe.db.set_value('driver_location', driver.name, 'selected_get_announced', 1)                                                       
                         print(customurl)
                 frappe.db.set_value('package_state_demo', package_state_demo.name, 'workflow_state', "Pickedup")                       
                 return          
@@ -106,7 +106,7 @@ def demostatemachine( package_state_demo ):
             packagedrivers=[]
             searchparam3 ="&d_lon="
             searchparam4 ="&d_lat="
-            packagedrivers = frappe.get_all('driver-location-demo',['name','mobile_number','contract_is_active','dist_lon','dist_lat','pickedup_get_announced'],filters={'package_order_id':package_state_demo.name,'accepted_order':1,'hired':1,'pickedup':1,'selecting_get_announced':1,'selected_get_announced':1})
+            packagedrivers = frappe.get_all('driver_location',['name','mobile_number','contract_is_active','dist_lon','dist_lat','pickedup_get_announced'],filters={'package_order_id':package_state_demo.name,'accepted_order':1,'hired':1,'pickedup':1,'selecting_get_announced':1,'selected_get_announced':1})
                        
             if not packagedrivers:
                 return
@@ -117,7 +117,7 @@ def demostatemachine( package_state_demo ):
                         customurl = serverurl + pageroute +searchparam1 + driver.mobile_number + searchparam2 + package_state_demo.name + searchparam3 + str(package_state_demo.dist_lon) + searchparam4 + str(package_state_demo.dist_lat)+ searchparam5 + driver.title
                         # send_whatsapp(customurl,driver.mobile_number)
                         print(' this driver collected order')
-                        frappe.db.set_value('driver-location-demo', driver.name, 'pickedup_get_announced', 1)                                                       
+                        frappe.db.set_value('driver_location', driver.name, 'pickedup_get_announced', 1)                                                       
                         print(customurl)
                 frappe.db.set_value('package_state_demo', package_state_demo.name, 'workflow_state', "handed to customer")                       
                 return
@@ -125,7 +125,7 @@ def demostatemachine( package_state_demo ):
             print("..................handed to customer....................................")
             packagedrivers=[]
             pageroute = "thank you"
-            packagedrivers = frappe.get_all('driver-location-demo',['name','mobile_number','contract_is_active'],filters={'package_order_id':package_state_demo.name,'accepted_order':1,'hired':1,'pickedup':1,'handed_customer':1,'selecting_get_announced':1,'selected_get_announced':1,'pickedup_get_announced':1})
+            packagedrivers = frappe.get_all('driver_location',['name','mobile_number','contract_is_active'],filters={'package_order_id':package_state_demo.name,'accepted_order':1,'hired':1,'pickedup':1,'handed_customer':1,'selecting_get_announced':1,'selected_get_announced':1,'pickedup_get_announced':1})
                        
             # driver =packagedrivers[0]
             if not packagedrivers:
@@ -138,7 +138,7 @@ def demostatemachine( package_state_demo ):
                         # send_whatsapp(customurl,driver.mobile_number)
                         print(' ..................this driver delivered order to customer')
                         print(customurl)
-                        frappe.db.set_value('driver-location-demo', driver.name, 'delivered_get_announced', 1)                                                       
+                        frappe.db.set_value('driver_location', driver.name, 'delivered_get_announced', 1)                                                       
                 frappe.db.set_value('package_state_demo', package_state_demo.name, 'workflow_state', "Done")                                             
                 return
         case _:

@@ -4,7 +4,7 @@
 # import frappe
 
 # import frappe
-from frappe.model.document import Document
+from frappe.website.website_generator import WebsiteGenerator
 
 
 class driver_location_demo(Document):
