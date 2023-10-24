@@ -11,7 +11,7 @@ from frappe.model.document import Document
 
 
 driverurl = []
-serverurl = "http://127.0.0.1:8000/"
+serverurl = "https://gt-demo.kcsc.com.jo/"
 pageroute = []
 drivernumber = ""
 ordernumber = ""

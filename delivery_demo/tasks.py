@@ -13,7 +13,7 @@ from urllib.parse import quote
 openorder = []
 packagedrivers = []
 driverurl = []
-serverurl = "http://demo.local:8000/"
+serverurl = "https://gt-demo.kcsc.com.jo/"
 pageroute = []
 drivernumber = ""
 ordernumber = ""

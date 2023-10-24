@@ -134,26 +134,26 @@ app_license = "mit"
 # ---------------
 
 scheduler_events = {
-    "cron":{
-        "*/2 * * * *":[
-            "delivery_demo.tasks.cron"
-        ]
-    },
+    # "cron":{
+    #     "*/2 * * * *":[
+    #         "delivery_demo.tasks.cron"
+    #     ]
+    # },
 	"all": [
 		"delivery_demo.tasks.all"
 	],
-	"daily": [
-		"delivery_demo.tasks.daily"
-	],
-	"hourly": [
-		"delivery_demo.tasks.hourly"
-	],
-	"weekly": [
-		"delivery_demo.tasks.weekly"
-	],
-	"monthly": [
-		"delivery_demo.tasks.monthly"
-	],
+	# "daily": [
+	# 	"delivery_demo.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"delivery_demo.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"delivery_demo.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"delivery_demo.tasks.monthly"
+	# ],
 }
 
 # Testing
